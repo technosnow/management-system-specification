@@ -21,8 +21,23 @@ class ProjectsController extends Controller
         ]]);
         return'sorted';
     }
+    public function destroy($id,Request $request){
+        DB::table('comments')->where('id',$id)->delete();
+        return'deleted';
+    }
+    public function Index_task($name){
+        return DB::table('comments')->where('name',$name)->get();
+    }
+    public function store_task(Request $request){
+        DB::table('comments')->insert([[
+            'task_id'=>$request->task_id,
+            'comment_text'=>$request->comment_text,
+            'start_date'=>$request->start_date,
+            'author'=>$request->author,
 
-
+        ]]);
+        return'sorted';
+    }
 }
 
 
