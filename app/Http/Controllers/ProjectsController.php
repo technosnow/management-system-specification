@@ -25,7 +25,7 @@ class ProjectsController extends Controller
         DB::table('comments')->where('id',$id)->delete();
         return'deleted';
     }
-    public function Index_task($name){
+    public function index1($name){
         return DB::table('comments')->where('name',$name)->get();
     }
     public function store_task(Request $request){

@@ -18,7 +18,7 @@ Route::prefix('projects')->group(function(){
 
 Route::prefix('comments')->group(function(){
     Route::get('/{id}',[ProjectsController::class, 'destroy']);
-    Route::POST('/{name}',[ProjectsController::class, 'Index_task']);
+    Route::POST('/{name}',[ProjectsController::class, 'index1']);
     Route::delete('/',[ProjectsController::class, 'store_task']);
 
 
